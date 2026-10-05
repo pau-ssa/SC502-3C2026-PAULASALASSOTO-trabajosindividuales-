@@ -1,13 +1,13 @@
-package com.example.PP1;
+package com.example.PrimeraParte;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PP1Application {
+public class PrimeraParteApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PP1Application.class, args);
+		SpringApplication.run(PrimeraParteApplication.class, args);
 	}
 
 }
