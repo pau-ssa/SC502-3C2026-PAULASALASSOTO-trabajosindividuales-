@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 2 SC-502 </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <!-- Archivo JavaScript -->
+    <script src="app.js" defer></script>
+    <!-- ENCABEZADO -->
+    <header class="header">
+        <div class="contenedor barra">
+            <a href="#" class="marca">SC-502 Calculadoras</a>
+            <nav class="menu" aria-label="Navegación Principal">
+                <a href="#inicio">Inicio</a>
+                <a href="#cargas">Cargas Sociales</a>
+                <a href="#edad">Edad</a>
+                <a href="#promedio">Promedios</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="contenedor hero">
+                <span class="kicker">Ambiente Web Cliente/Servidor</span>
+                <h1>Practica 2 HTML & Javascript</h1>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 1  CALCULO CARGAS SOCIALES-->
+        <section id= "cargas" class="tarjeta">
+            <h2 class="text-calc mb-3">Cálculo de cargas sociales</h2>
+            <p>Ingrese el salario bruto mensual en colones para calcular las deducciones y el salario neto.</p>
+            <div class="calccargas">
+                <form id="formularioSalario">
+                    <div class="mb-3">
+                        <label for="salarioBruto" class="form-label"> Salario bruto mensual (₡) </label>
+                        <input type="number" id="salarioBruto" class="form-control" min="0" step="0.01"
+                            placeholder="Ejemplo: ₡ 1200000" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="hijos" class="form-label"> Cantidad de hijos para crédito fiscal </label>
+                        <input type="number" id="hijos" class="form-control" min="0" step="1" value="0" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="conyuge" class="form-label"> Crédito fiscal por cónyuge </label>
+                        <select id="conyuge" class="form-select">
+                            <option value="0">No aplicar</option>
+                            <option value="2590">Aplicar (₡2.590)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primario"> Calcular salario neto </button>
+                    <button type="reset" id="resetBtn" class="btn btn-claro">Restablecer</button>
+                </form>
+
+                <div id="resultadoSalario" class="resultado" aria-live="polite" hidden>
+                    <h4>Resultado del cálculo</h4>
+                    <p> Salario bruto:
+                        <strong id="mostrarBruto"></strong>
+                    </p>
+                    <p>Cargas sociales (10,83 %):
+                        <strong id="mostrarCargas"></strong>
+                    </p>
+                    <p>Impuesto sobre la renta:
+                        <strong id="mostrarRenta"> </strong>
+                        <small class="text-muted" id="tramoTxt"></small>
+                    </p>
+                    <p>Créditos a favor (hijos y cónyuge):
+                        <strong id="mostrarCreditos"></strong>
+                    </p>
+                    <p class="fs-5"> Salario neto:
+                        <strong id="mostrarNeto" class="text-calc"></strong>
+                    </p>
+                    <small class="text-muted">Este contenido y el cálculo es informativo y no constituye asesoría
+                        legal, laboral o contable personalizada. Las tasas de CCSS y los tramos de renta pueden cambiar;
+                        verifique siempre la vigencia con las fuentes oficiales.</small>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- EJERCICIO 2 -->
+        <section id="edad" class="tarjeta">
+            <h2 class="text-calc mb-3"> Confirmacion de lectura </h2>
+            <p id="parrafoDOM"> Contenido informativo, no apto para uso oficial, aceptar terminos a continuacion </p>
+            <button type="button" id="botonDOM" class="btn btn-claro"> Acepto </button>
+        </section>
+
+
+        <!-- EJERCICIO CALCULO DE MAYORIA DE EDAD -->
+        <section id="promedio" class="tarjeta">
+            <h2 class="text-calc mb-3"> Calculo de mayoria de edad</h2>
+
+            <div class="mb-3">
+                <label for="edad" class="form-label"> Ingrese su edad </label>
+                <input type="number" id="edad" class="form-control" min="0" step="1" placeholder="Ejemplo: 20">
+            </div>
+            <button type="button" id="botonEdad" class="btn btn-primario"> Verificar edad </button>
+            <p id="resultadoEdad" class="mt-3" aria-live="polite"></p>
+        </section>
+
+        <!-- EJERCICIO 4 REGISTRO Y CÁLCULO DE PROMEDIOS -->
+        <section class="tarjeta">
+            <h2 class="text-calc mb-3">Registro y cálculo de promedios</h2>
+            <p>Registro de estudiantes, listado y promedio general de notas.</p>
+
+            <div id="formularioRegistroNota" class="mt-4 campo">
+                <h4 class="mb-3">Registrar nota</h4>
+                <p class="ayuda-campo">El nombre completo debe tener entre 5 y 60 caracteres,
+                    no puede repetirse y se pueden registrar máximo 35 estudiantes.</p>
+                <form id="formularioEstudiante" novalidate>
+                    <div class="campo">
+                        <label for="nombreEstudiante">Nombre del estudiante</label>
+                        <input id="nombreEstudiante" type="text" maxlength="60" placeholder="Ej. Juan Pérez"
+                            aria-describedby="ayudaNombre">
+                        <small id="ayudaNombre">No se permiten nombres vacíos ni duplicados.</small>
+                    </div>
+                    <div class="campo">
+                        <label for="nota">Nota</label>
+                        <input id="nota" type="number" min="0" max="100" placeholder="Ej. 85"
+                            aria-describedby="ayudaNota">
+                        <small id="ayudaNota">La nota debe estar entre 0 y 100.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primario">Agregar estudiante</button>
+                </form>
+                <p id="mensajeNotas" class="mensaje" role="status" aria-live="polite"></p>
+            </div>
+
+            <div id="contenedorNotas" class="campo">
+                <h4 class="mb-3">Listado de estudiantes</h4>
+                <div class="barra-herramientas">
+                    <div class="campo">
+                        <label for="filtroNotas">Mostrar</label>
+                        <select id="filtroNotas">
+                            <option value="Todos">Todos</option>
+                            <option value="Aprobados">Aprobados</option>
+                            <option value="Reprobados">Reprobados</option>
+                        </select>
+                    </div>
+                    <button type="button" id="limpiarNotas" class="btn btn-claro">
+                        Limpiar notas
+                    </button>
+                </div>
+                <p class="conteo-visible">Elementos mostrados: <strong id="totalVisibles">0</strong></p>
+                <p id="estadoVacioNotas" class="estado-vacio"></p>
+                <div id="listaNotas" class="lista"></div>
+                <div class="resultado">
+                    <h5>Promedio de notas:
+                        <span id="promedioNotas" class="text-calc">0.00</span>
+                    </h5>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p class="mb-0"> Práctica 2 · HTML y JavaScript · Universidad Fidélitas </p>
+    </footer>
+
+</body>
+
+</html>

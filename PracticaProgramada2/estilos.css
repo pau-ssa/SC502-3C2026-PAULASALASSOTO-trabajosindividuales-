@@ -1,0 +1,229 @@
+/* Paleta temática del sistema: azul claro, azul oscuro, verde y crema medsolutions */
+:root {
+    --calculador-lima: #8cb823;
+    --calculador-lila: #88a0ff;
+    --calculador-morado: #8636e3;
+    --calculador-verde: #739d11;
+    --calculador-alerta: #e4685f;
+    --calculador-crema: #f1f3f4;
+    --calculador-blanco: #fefeff;
+    --calculador-gris: #b5b5b5;
+    --calculador-grisoscuro: #526072;
+}
+
+/* ESTILOS GENERALES */
+
+body {
+    background-color: var(--calculador-crema);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.contenedor {
+    width: 92%;
+    max-width: 990px;
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 10px 14px;
+    border: 1px solid var(--calculador-verde);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primario {
+    color: var(--calculador-blanco);
+    background-color: var(--calculador-lima);
+}
+
+.btn-primario:hover {
+    color: var(--calculador-blanco);
+    background-color: var(--calculador-verde);
+}
+
+.btn-claro {
+    color: var(--calculador-lila);
+    background-color: var(--calculador-blanco);
+}
+
+.btn-claro:hover {
+    color: var(--calculador-blanco);
+    background-color: var(--calculador-lila);
+}
+
+.btn-peligro {
+    color: var(--calculador-alerta);
+    background-color: white;
+    border-color: var(--calculador-alerta);
+}
+
+.btn-peligro:hover {
+    color: var(--calculador-alerta);
+    background-color: var(--calculador-crema);
+    border-color: var(--calculador-alerta);
+}
+
+/* ENCABEZADO */
+header {
+    background: var(--calculador-blanco);
+    border-bottom: 5px solid var(--calculador-lila);
+    color: var(--calculador-lima);
+}
+
+.barra {
+    min-height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--calculador-lima);
+    text-decoration: none;
+}
+
+.marca {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--calculador-lima);
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    gap: .35rem;
+}
+
+.menu a {
+    padding: .45rem .7rem;
+    border-radius: .35rem;
+    text-decoration: none;
+    color: var(--calculador-grisoscuro);
+}
+
+.menu a:hover {
+    background: var(--calculador-crema);
+    color: var(--calculador-lima);
+}
+
+/* SECCION INICIO*/
+.seccion {
+    padding: 3rem 0
+}
+
+.hero {
+    padding: 1rem 0;
+    color: var(--calculador-blanco);
+    background: var(--calculador-lima);
+    margin-bottom: 25px;
+}
+
+.text-calc {
+    color: var(--calculador-lima);
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+h4 {
+    color: var(--calculador-lila);
+    font-weight: bold;
+}
+
+
+h1 {
+    max-width: 700px;
+    margin: .35rem 0 1rem;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: bold;
+}
+
+.kicker {
+    font-size: .7rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--calculador-morado);
+}
+
+/* TARJETAS DE LOS EJERCICIOS */
+
+.tarjeta {
+    background-color: var(--calculador-blanco);
+    padding: 25px;
+    border-radius: 12px;
+    margin: 25px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.calccargas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+}
+
+/* RESULTADOS */
+.resultado {
+    background-color: var(--calculador-crema);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.resultado p {
+    margin-bottom: 8px;
+}
+
+/* LISTA DE ESTUDIANTES */
+.barra-herramientas { display: flex; gap: 16px; align-items: end; }
+.barra-herramientas .campo { flex: 1; }
+.barra-herramientas button { margin-bottom: 14px; }
+.conteo-visible { color: #526072; }
+.mensaje { margin-bottom: 0; }
+.mensaje:empty { display: none; }
+.mensaje-error { color: #b33c47; }
+.mensaje-bien { color: #2e7b56; }
+.mensaje-aviso { color: #a46b00; }
+.lista { padding: 0; margin: 0; list-style: none; }
+.ayuda-campo { color: #526072; }
+.campo { margin-bottom: 14px; }
+input, select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    font: inherit;
+    border: 1px solid #8792a2;
+    border-radius: 5px;
+    background-color: white;
+}
+.fila-formulario { display: flex; gap: 14px; }
+.fila-formulario .campo { flex: 1; }
+
+#estadoVacio { padding: 12px; background-color: #f1f4f7; }
+
+/* PIE DE PÁGINA */
+footer {
+    background-color: var(--calculador-crema);
+    color: var(--calculador-grisoscuro);
+    text-align: center;
+    padding: 20px;
+}
+
+/* ADAPTACIÓN PARA CELULARES */
+@media (max-width: 576px) {
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .tarjeta {
+        padding: 18px;
+    }
+}

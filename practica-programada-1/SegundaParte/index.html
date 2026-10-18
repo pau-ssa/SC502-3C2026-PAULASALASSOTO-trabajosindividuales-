@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica MedSolutions</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <header class="encabezado-sitio">
+        <div class="contenedor encabezado-contenido">
+            <!-- NAV agrupa los enlaces de navegación del sitio. -->
+            <nav class="navbar-medsolutions">
+                <ul>
+                    <!-- El ID identifica este título como un elemento unico. -->
+                    <li>
+                        <h1 id="marca-principal">MedSolutions</h1>
+                    </li>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#perfildr">Perfil del Doctor</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!--
+            HERO / PRESENTACION
+            Esta seccion comunica el proposito principal de la aplicacion.
+        -->
+        <section id="inicio" class="seccion presentacion">
+            <div class="contenedor">
+                <h2>Servicios de Salud</h2>
+                <p>No dude en consultar sobre nuestros especialistas.</p>
+                <a class="btn btn-medsolutions" href="#perfildr">Ver Perfil</a>
+            </div>
+        </section>
+
+        <!-- SECCION DE TARJETAS PERF DR-->
+        <section id="perfildr" class="seccion">
+            <div class="contenedor">
+                <div class="card">
+                    <h3>Dra. FernandaPerez</h3>
+                    <p>Especialista en Neumología</p>
+                    <p>Cuenta con 15 años de experiencia en el área de salud respiratoria del hospital de niños</p>
+                    <a class="btn btn-medsolutions" href="#reservas">Agendar Cita</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCION DE TARJETAS COMENTARIOS-->
+        <section id="servicios" class="seccion">
+            <div class="contenedor">
+                <h2>Comentarios de Pacientes</h2>
+                <p>Descubre lo que nuestros pacientes opinan sobre nuestros servicios.</p>
+
+                <div class="cards">
+                    <!-- El ID de esta tarjeta se usara para demostrar un selector por ID. -->
+                    <article class="card" id="actividad-destacada">
+                        <h3>Pedro Perez Sosa</h3>
+                        <p>Excelente servicio.</p>
+                        <p id="fecha-consulta">Fecha de consulta: 2023-10-15</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Luis García</h3>
+                        <p>Fue muy atenta y explicativa</p>
+                        <p id="fecha-consulta">Fecha de consulta: 2026-1-5</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Melissa Rodríguez</h3>
+                        <p>Fue quien me ayudó con mi diagnóstico de asma, excelente profesional.</p>
+                        <p id="fecha-consulta">Fecha de consulta: 2026-7-25</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FORMULARIO: conecta el ejemplo con la Práctica Programada 1. -->
+        <section id="reservas" class="seccion seccion-reserva">
+            <div class="contenedor">
+                <h2>Solicitud de Cita</h2>
+                <p>Complete los datos solicitados para registrar su cita.</p>
+
+                <form class="formulario-reserva">
+                    <div class="fila-formulario">
+                        <div class="campo">
+                            <label for="nombre">Nombre completo</label>
+                            <input id="nombre" name="nombre" type="text" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="contacto">Correo electrónico</label>
+                            <input id="contacto" name="contacto" type="email" placeholder="nombre@ejemplo.com" required>
+                        </div>
+                    </div>
+
+                    <div class="fila-formulario">
+                        <div class="campo control-pequenno">
+                            <label for="fecha">Fecha</label>
+                            <input id="fecha" name="fecha" type="date" required>
+                        </div>
+
+                        <div class="campo especialidad">
+                            <label for="especialidad">Especialidad</label>
+                            <input id="especialidad" name="especialidad" type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="comentarios">Comentarios</label>
+                        <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+                    </div>
+
+                    <button class="btn btn-medsolutions" type="submit">Enviar reservación</button>
+                </form>
+                <button class="btn btn-medsolutions" type="button">Anterior</button>
+                <button class="btn btn-medsolutions" type="button">Siguiente</button>
+            </div>
+        </section>
+    </main>
+    <footer class="footer-medsolutions">
+        <div class="contenedor">
+            <p>MedSolutions Derechos Reservados 2026 &COPY;</p>
+        </div>
+    </footer>
+</body>
+
+</html>

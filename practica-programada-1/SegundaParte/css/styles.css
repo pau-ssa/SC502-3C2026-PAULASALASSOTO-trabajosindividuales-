@@ -1,0 +1,245 @@
+/* Paleta temática del sistema: azul claro, azul oscuro, verde y crema medsolutions */
+:root {
+    --medsolutions-azul: #563ede;
+    --medsolutions-azul-claro: #88a0ff ;
+    --medsolutions-crema: #eefcff;
+    --medsolutions-arena: #fdfeff;
+    --medsolutions-verde: #4ab953;
+}
+
+body {
+    /* Fondo general muy claro. */
+    background-color: var(--medsolutions-arena);
+
+    /* Cambia la fuente de toda la pagina. */
+    font-family: Arial, sans-serif;
+
+    /* Elimina el margen que el navegador coloca por defecto. */
+    margin: 0;
+
+      /* Color general del texto. */
+    color: #243447;
+}
+
+header {
+    background-color:var(--medsolutions-azul-claro);
+    color: var(--medsolutions-crema);
+}
+
+main {
+    background-color: var(--medsolutions-arena);
+}
+
+footer {
+    background-color: var(--medsolutions-azul-claro);
+    color: var(--medsolutions-crema);
+}
+
+a {
+    color: var(--medsolutions-crema);
+    text-decoration: none;
+}
+
+h2 {
+    color:  #563ede;
+    font-family:sans-serif bold;
+}
+
+h3 {
+    color:  #563ede;
+    font-family:sans-serif bold italic;
+}
+p {
+    color: #3e454d;
+    font-family:sans-serif;
+}
+
+
+/* ============================================================
+    SELECTORES POR CLASE
+   ============================================================
+*/
+.contenedor {
+    /* Ocupa el 90% del ancho disponible. */
+    width: 90%;
+
+    /* Evita que el contenido crezca demasiado en pantallas grandes. */
+    max-width: 1050px;
+
+    /* Centra horizontalmente el contenedor. */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.seccion {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+
+/* Barra de navegación */
+.navbar-medsolutions .navbar-brand {
+    color: var(--medsolutions-azul-claro);
+    border-bottom: 1px solid var(--medsolutions-crema);
+    font-weight: 700;
+    letter-spacing: 3px;
+    background-color: var(--medsolutions-azul-claro);
+
+}
+
+.navbar-medsolutions ul {
+    /* Elimina las viñetas del ul. */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+
+  
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-medsolutions a:hover {
+    color: var(--medsolutions-azul);
+}
+
+/* Sección de portada (hero) */
+.hero-medsolutions {
+    background: linear-gradient(135deg, var(--medsolutions-azul-claro) 0%, var(--medsolutions-azul) 100%);
+}
+
+/* Botones */
+.btn-medsolutions {
+    display: inline-block;
+    background-color: var(--medsolutions-azul);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 7px;
+    padding: 10px 18px;
+    border: 1px solid #9bb8d3;
+    margin: 10px;
+}
+
+.btn-medsolutions:hover {
+    display: inline-block;
+    background-color: var(--medsolutions-verde);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 7px;
+    border: 1px solid #9bb8d3;
+    margin: 10px;
+}
+
+/* Tarjetas */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Tarjetas de citas y especialidades */
+.card {
+    width: 270px;
+    padding: 20px;
+    margin-bottom: 18px;
+    border-radius: 7px;
+    border: 2px solid var(--medsolutions-azul);
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
+/* Elemento activo del filtro de especialidades */
+.list-group-item.active {
+    background-color: var(--medsolutions-azul-claro);
+    border-color: var(--medsolutions-azul);
+}
+
+
+/* Colores de marca reutilizables junto con Bootstrap */
+.bg-medsolutions {
+    background-color: var(--medsolutions-crema);
+}
+
+.text-medsolutions {
+    color: var(--medsolutions-azul);
+}
+
+
+/* Pie de página */
+.footer-medsolutions p{
+    background-color: var(--medsolutions-azul-claro);
+    color: var(--medsolutions-crema) !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+
+.form-control:focus {
+    border-color: var(--medsolutions-azul-claro);
+    box-shadow: 0 0 0 .25rem rgba(138, 111, 176, .25);
+}
+
+.badge.bg-medsolutions {
+    background-color: var(--medsolutions-azul-claro);
+}
+
+
+.encabezado-sitio {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.presentacion {
+    /* Aumentamos el espacio interno para destacar esta seccion. */
+    padding-top: 55px;
+    padding-bottom: 55px;
+    text-align: center;
+    background-color: var(--medsolutions-crema);
+}
+
+
+.formulario-reserva {
+    background-color: var(--medsolutions-crema);
+    border: 1px solid #b9cde0;
+    padding: 25px;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+input,
+textarea {
+    /* Usamos 95% para dejar espacio al padding y al borde sin introducir
+       todavia la propiedad box-sizing. */
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #9fb4c8;
+}
+
+/* ============================================================
+   SELECTORES 
+   ============================================================
+*/
+
+input[required] {
+    border: 2px solid #7aa6cc;
+}
+
+#perfildr .card {
+    margin: 0 auto 18px;
+}
+
+#fecha-consulta{
+    font-family:sans-serif;
+    font-size: 12px;
+    font-weight: italic;
+    color: #56595cb5;
+}
