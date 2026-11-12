@@ -1,0 +1,252 @@
+:root {
+    --calculadora-naranja: #fb7827;
+    --calculadora-naranja-oscuro: #d9601a;
+    --calculadora-calabaza: #7a3c12;
+    --texto: #1f2933;
+    --texto-suave: #526072;
+    --borde: #ced4dd;
+    --radio: .45rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.5;
+    color: var(--texto);
+    background: #faf7f4;
+}
+
+a { color: var(--calculadora-naranja-oscuro); }
+
+h1, h2, h3 {
+    line-height: 1.2;
+    color: var(--calculadora-calabaza);
+}
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+:focus-visible {
+    outline: 3px solid rgba(251, 120, 39, .4);
+    outline-offset: 2px;
+}
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -3rem;
+    background: var(--calculadora-calabaza);
+    color: #fff;
+    padding: .5rem 1rem;
+    border-radius: var(--radio);
+    z-index: 10;
+}
+.skip-link:focus { top: 1rem; }
+.site-header {
+    background: #fff;
+    border-bottom: 1px solid var(--borde);
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    min-height: 4rem;
+}
+.site-header .marca {
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: var(--calculadora-calabaza);
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25rem;
+}
+
+.nav-link {
+    padding: .45rem .75rem;
+    border-radius: var(--radio);
+    color: var(--texto);
+    text-decoration: none;
+}
+.nav-link:hover {background: #fff1e7;color: var(--calculadora-calabaza);}
+.panel-hero {
+    background: linear-gradient(120deg, var(--calculadora-calabaza) 0%, var(--calculadora-naranja) 70%, #ffb180 100%);
+    color: #fff;
+    padding: 2.5rem 0;
+    margin-bottom: 2rem;
+}
+.panel-hero h1,
+.panel-hero p {color: #fff;margin: 0 0 .5rem;}
+.course-kicker {
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: .8rem;
+    font-weight: 700;
+    opacity: .9;
+}
+.ok {
+    border-left: 4px solid #2e7b56;
+    background: #e8f5ee;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.error {
+    border-left: 4px solid #ff0019;
+    background: #fae9eb;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.alert {padding: 1rem;border-radius: var(--radio);margin-bottom: 1rem;}
+.alert-info {background: #fff1e7;border-left: 4px solid var(--calculadora-naranja);}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    min-height: 2.5rem;
+    padding: .55rem 1rem;
+    border: 1px solid transparent;
+    border-radius: var(--radio);
+    font: inherit;
+    font-weight: 650;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 180ms ease, transform 180ms ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary {background: var(--calculadora-naranja);color: #fff;}
+.btn-primary:hover {background: var(--calculadora-naranja-oscuro);color: #fff;}
+.btn-outline {
+    background: transparent;
+    border-color: var(--calculadora-calabaza);
+    color: var(--calculadora-calabaza);
+}
+.btn-outline:hover {background: var(--calculadora-calabaza);color: #fff;}
+
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+.etiqueta {
+    display: inline-block;
+    background: #e5f8fa;
+    color: var(--calculadora-calabaza);
+    border-radius: 3rem;
+    font-size: .75rem;
+    font-weight: 700;
+    padding: .2rem .65rem;
+}
+
+.estado-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.transacciones-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    background: #fff;
+    border: 1px solid var(--borde);
+    border-radius: .7rem;
+    box-shadow: 0 2px 10px rgba(122, 60, 18, .18);
+}
+
+.transacciones-card h3 {font-size: 1.15rem;margin: .6rem 0;}
+.transacciones-card p { font-size: .95rem; }
+.transacciones-card .acciones {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    padding-top: .5rem;
+}
+
+.transacciones-icono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.5rem;
+    border-radius: .5rem;
+    background: #eaf1f8;
+    color: var(--calculadora-naranja);
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.resumen-cuenta {height: auto;margin-top: 2rem;}
+.resumen-cuenta dl {margin: 0;max-width: 32rem;}
+.resumen-cuenta dl > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .5rem 0;
+    border-bottom: 1px solid #ddd;
+}
+.resumen-cuenta dt { font-weight: 600; }
+.resumen-cuenta dd { margin: 0;font-variant-numeric: tabular-nums;}
+.resumen-cuenta dl > .resumen-total {
+    font-size: 1.15rem;
+    border-bottom: 2px solid var(--calculadora-naranja);
+}
+.resumen-total dd {color: var(--calculadora-calabaza);font-weight: 800;}
+.formulario { max-width: 790px; }
+.formulario.transacciones-card { height: auto; }
+.campo { margin-bottom: 1.05rem; }
+.campo label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: .35rem;
+}
+.campo input {
+    width: 100%;
+    min-height: 2.7rem;
+    padding: .6rem .75rem;
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    background: #fff;
+    font: inherit;
+    color: inherit;
+}
+.campo input:focus {
+    outline: 0;
+    border-color: var(--calculadora-naranja);
+    box-shadow: 0 0 0 3px rgba(251, 120, 39, .2);
+}
+.ayuda {color: var(--texto-suave);font-size: .85rem;}
+.campo .ayuda { display: block; margin-top: .25rem;}
+.controles {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .8rem;
+}
+
+.pie-local {
+    font-size: .85rem;
+    background: var(--calculadora-calabaza);
+    color: #fff;
+    padding: 1.1rem 0;
+    margin-top: 3rem;
+}
+.pie-local p { margin: 0;color: #fff;}
+
+@media (max-width: 600px) {
+    .panel-hero { padding: 1.5rem 0; }
+    .resumen-total { font-size: 1rem; }
+}
