@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SC-502 Caso de Estudio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <!-- Archivo JavaScript -->
+    <script src="js/app.js" defer></script>
+    <!-- ENCABEZADO -->
+    <header class="header">
+        <div class="contenedor barra">
+            <a href="#" class="marca">SC-502 Caso de Estudio</a>
+            <nav class="menu" aria-label="Navegación Principal">
+                <a href="#Registro">Nuevo Registro</a>
+                <a href="#Lista">Lista de Estudiantes</a>
+                <a href="#Resumen">Resumen de Notas</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="Inicio" class="hero">
+            <div class="contenedor hero">
+                <span class="kicker">Ambiente Web Cliente/Servidor</span>
+                <h2>Registro de Estudiantes y Promedios</h2>
+            </div>
+        </section>
+        <div class="contenedor">
+            <div class="calccargas">
+                <!--SECCION PARA AGREGAR NUEVOS ESTUDIANTES-->
+                <section id="Registro" class="tarjeta">
+                    <div id="DOM" class="tarjeta">
+                        <h2 class="text-calc mb-3"> Nuevo Registro </h2>
+                        <p id="parrafoDOM"> ¿Desea agregar un nuevo estudiante?
+                            <br>
+                            <button type="button" id="botonDOM" class="btn btn-claro"> Sí </button>
+                        </p>
+
+                        <div id="formularioRegistro" class="mt-4 campo" hidden>
+                            <h4 class="mb-3">Registro de Estudiante</h4>
+                            <p class="ayuda-campo">El nombre completo debe tener de 5 a 60 caracteres, no debe
+                                repetirse.Max 35 estudiantes.</p>
+                            <form id="formularioEstudiante" novalidate>
+                                <div class="campo">
+                                    <label for="nombreEstudiante">Nombre del estudiante</label>
+                                    <input id="nombreEstudiante" type="text" maxlength="60"
+                                        placeholder="Ej. Juan Pérez">
+                                </div>
+                                <div class="campo">
+                                    <label for="nota">Nota</label>
+                                    <input id="nota" type="number" min="0" max="100" placeholder="Ej. 85">
+                                </div>
+                                <button type="submit" class="btn btn-primario">Completar Registro</button>
+                            </form>
+                            <p id="mensajeNotas" class="mensaje" role="status" aria-live="polite"></p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!--LISTA DE ESTUDIANTES-->
+                <section id="Lista" class="tarjeta">
+                    <h4 class="mb-3">Listado de Estudiantes</h4>
+                    <div id="contenedorNotas" class="campo">
+                        <div class="barra-herramientas">
+                            <div class="campo">
+                                <label for="filtroNotas">Mostrar</label>
+                                <select id="filtroNotas">
+                                    <option value="Todos">Todos</option>
+                                    <option value="Aprobados">Aprobados</option>
+                                    <option value="Reprobados">Reprobados</option>
+                                </select>
+                            </div>
+                            <button type="button" id="limpiarNotas" class="btn btn-claro">
+                                Limpiar filtros
+                            </button>
+                        </div>
+                        <p class="conteo-visible">Elementos mostrados: <strong id="totalVisibles">0</strong></p>
+                        <p id="estadoVacioNotas" class="estado-vacio"></p>
+                        <div id="listaNotas" class="lista"></div>
+                    </div>
+
+                </section>
+            </div>
+
+            <!-- RESUMEN DE PROMEDIOS -->
+            <section id="Resumen" class="tarjeta">
+                <h2 class="text-calc mb-3">Resumen de Notas</h2>
+                <div class="resultado">
+                    <h5>Promedio de notas:
+                        <span id="promedioNotas" class="mensaje">0.00</span>
+                    </h5>
+                </div>
+                <div class="resultado">
+                    <h5>Nota más alta:
+                        <span id="notaMayor" class="mensaje mensaje-bien"></span>
+                    </h5>
+                </div>
+                <div class="resultado">
+                    <h5>Nota más baja:
+                        <span id="notaMenor" class="mensaje mensaje-error"></span>
+                    </h5>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p class="mb-0"> Caso de Estudio 1 · Maria Paula Salas Soto · Universidad Fidélitas </p>
+    </footer>
+
+</body>
+
+</html>
