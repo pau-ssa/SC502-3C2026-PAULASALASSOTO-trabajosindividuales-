@@ -1,4 +1,15 @@
-<div class="barra">
+<?php
+/** Variables que llegan desde TransaccionController::estado() vía View::render()
+ * @var array  $transacciones
+ * @var float  $contado
+ * @var float  $conInteres
+ * @var float  $cashback
+ * @var float  $final
+ * @var string $fecha
+ */
+?>
+
+<div class="barra" id="transacciones">
     <h2>Lista de transacciones</h2>
     <span class="etiqueta"><?= count($transacciones) ?> transacción(es)</span>
 </div>
@@ -40,7 +51,7 @@
     </div>
 <?php endif; ?>
 
-<section class="transacciones-card resumen-cuenta" aria-labelledby="titulo-resumen">
+<section class="transacciones-card resumen-cuenta" id="estado-cuenta" aria-labelledby="titulo-resumen">
     <div class="barra">
         <h2 id="titulo-resumen">Estado de cuenta</h2>
         <span class="etiqueta">Generado: <?= e($fecha) ?></span>
