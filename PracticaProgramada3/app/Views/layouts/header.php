@@ -1,5 +1,6 @@
 <?php
 $titulo = "";
+$accionActual = $_GET['accion'] ?? 'estado';
 ?>
 <!doctype html>
 <html lang="es">
@@ -15,10 +16,12 @@ $titulo = "";
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
         <div class="container navbar">
-            <a class="marca" href="<?= e(ruta()) ?>">Estado de Cuenta Crédito</a>
+            <a class="marca" href="<?= e(ruta('estado')) ?>">Estado de Cuenta Crédito</a>
             <nav class="nav" aria-label="Navegación principal">
-                <a class="nav-link" href="<?= e(ruta()) ?>">Transacciones</a>
-                <a class="nav-link" href="<?= e(ruta('estado')) ?>">Estado de Cuenta</a>
+                <a class="nav-link" href="<?= e(ruta('estado')) ?>#transacciones">Transacciones</a>
+                <a class="nav-link" href="<?= e(ruta('estado')) ?>#estado-cuenta">Estado de Cuenta</a>
+                <a class="nav-link <?= in_array($accionActual, ['crear', 'guardar'], true) ? 'activo' : '' ?>"
+                    href="<?= e(ruta('crear')) ?>">Registrar transacción</a>
             </nav>
         </div>
     </header>
